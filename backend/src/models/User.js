@@ -1,0 +1,48 @@
+import mongoose from 'mongoose'
+
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true,
+    trim: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  college: {
+    type: String,
+    required: true
+  },
+  branch: {
+    type: String,
+    required: true
+  },
+  profileImage: {
+    type: String,
+    default: null
+  },
+  badges: {
+    type: [String],
+    default: []
+  },
+  streakDays: {
+    type: Number,
+    default: 0
+  },
+  lastActivityDate: {
+    type: Date,
+    default: null
+  }
+}, {
+  timestamps: true
+})
+
+export default mongoose.model('User', userSchema)
