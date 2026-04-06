@@ -25,4 +25,21 @@ export const authAPI = {
   getMe: () => api.get('/auth/me')
 }
 
+// Notes API calls
+export const notesAPI = {
+  generateNotes: (data) => api.post('/notes/generate', data)
+}
+
+// Quiz API calls
+export const quizAPI = {
+  generateQuiz: (data) => api.post('/quiz/generate', data),
+  submitQuiz: (data) => api.post('/quiz/submit', data)
+}
+
+// QA API calls
+export const qaAPI = {
+  generateQA: (data) => api.post('/qa/generate', data),
+  evaluateQA: (data) => api.post('/qa/evaluate', data)
+}
+
 export default api

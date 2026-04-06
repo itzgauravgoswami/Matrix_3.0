@@ -3,6 +3,9 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import authRoutes from './routes/authRoutes.js'
+import notesRoutes from './routes/notesRoutes.js'
+import quizRoutes from './routes/quizRoutes.js'
+import qaRoutes from './routes/qaRoutes.js'
 
 dotenv.config()
 
@@ -23,6 +26,9 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/self-rank
 
 // Routes
 app.use('/api/auth', authRoutes)
+app.use('/api/notes', notesRoutes)
+app.use('/api/quiz', quizRoutes)
+app.use('/api/qa', qaRoutes)
 
 // Health check
 app.get('/api/health', (req, res) => {

@@ -33,7 +33,8 @@ export default function Dashboard() {
       description: 'AI-powered notes generation from any subject or topic',
       icon: 'fa-file-alt',
       color: 'bg-orange-50',
-      iconColor: 'text-orange-600'
+      iconColor: 'text-orange-600',
+      route: '/generate-notes'
     },
     {
       id: 2,
@@ -41,7 +42,8 @@ export default function Dashboard() {
       description: 'Create customized quizzes to test your knowledge',
       icon: 'fa-question-circle',
       color: 'bg-orange-50',
-      iconColor: 'text-orange-600'
+      iconColor: 'text-orange-600',
+      route: '/generate-quiz'
     },
     {
       id: 3,
@@ -49,7 +51,8 @@ export default function Dashboard() {
       description: 'Get instant answers to your subject questions',
       icon: 'fa-comments',
       color: 'bg-orange-50',
-      iconColor: 'text-orange-600'
+      iconColor: 'text-orange-600',
+      route: '/generate-qa'
     },
     {
       id: 4,
@@ -57,7 +60,8 @@ export default function Dashboard() {
       description: 'Access premium learning resources and courses',
       icon: 'fa-crown',
       color: 'bg-orange-50',
-      iconColor: 'text-orange-600'
+      iconColor: 'text-orange-600',
+      route: '/supreme-learning'
     },
     {
       id: 5,
@@ -65,7 +69,8 @@ export default function Dashboard() {
       description: 'Get personalized tutoring powered by artificial intelligence',
       icon: 'fa-robot',
       color: 'bg-orange-50',
-      iconColor: 'text-orange-600'
+      iconColor: 'text-orange-600',
+      route: '/ai-tutor'
     },
     {
       id: 6,
@@ -73,7 +78,8 @@ export default function Dashboard() {
       description: 'Learn through games and earn badges and streaks',
       icon: 'fa-gamepad',
       color: 'bg-orange-50',
-      iconColor: 'text-orange-600'
+      iconColor: 'text-orange-600',
+      route: '/gamification'
     },
     {
       id: 7,
@@ -81,7 +87,8 @@ export default function Dashboard() {
       description: 'Track your learning progress with detailed analytics',
       icon: 'fa-chart-line',
       color: 'bg-orange-50',
-      iconColor: 'text-orange-600'
+      iconColor: 'text-orange-600',
+      route: '/analytics'
     },
     {
       id: 8,
@@ -89,7 +96,8 @@ export default function Dashboard() {
       description: 'Follow curated learning paths tailored to your goals',
       icon: 'fa-road',
       color: 'bg-orange-50',
-      iconColor: 'text-orange-600'
+      iconColor: 'text-orange-600',
+      route: '/learning-path'
     }
   ]
 
@@ -98,7 +106,7 @@ export default function Dashboard() {
       <Navbar />
 
       <main className="flex-grow py-12 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto mt-16">
           {/* Welcome Section */}
           <div className="mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
@@ -114,6 +122,7 @@ export default function Dashboard() {
             {features.map((feature) => (
               <div
                 key={feature.id}
+                onClick={() => navigate(feature.route)}
                 className={`${feature.color} rounded-2xl p-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-orange-100 hover:border-orange-500`}
               >
                 {/* Icon */}
@@ -166,27 +175,27 @@ export default function Dashboard() {
           <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-2xl p-8 border-2 border-orange-200">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Quick Navigation</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a
-                href="#"
+              <button
+                onClick={() => navigate('/analytics')}
                 className="py-3 px-4 bg-white rounded-lg text-center font-semibold text-orange-600 hover:bg-orange-500 hover:text-white transition-all duration-300 border-2 border-orange-200 hover:border-orange-500"
               >
                 <i className="fas fa-chart-bar mr-2"></i>
                 My Analytics
-              </a>
-              <a
-                href="#"
+              </button>
+              <button
+                onClick={() => navigate('/gamification')}
                 className="py-3 px-4 bg-white rounded-lg text-center font-semibold text-orange-600 hover:bg-orange-500 hover:text-white transition-all duration-300 border-2 border-orange-200 hover:border-orange-500"
               >
                 <i className="fas fa-trophy mr-2"></i>
                 Leaderboard
-              </a>
-              <a
-                href="#"
+              </button>
+              <button
+                onClick={() => navigate('/learning-path')}
                 className="py-3 px-4 bg-white rounded-lg text-center font-semibold text-orange-600 hover:bg-orange-500 hover:text-white transition-all duration-300 border-2 border-orange-200 hover:border-orange-500"
               >
                 <i className="fas fa-user mr-2"></i>
-                My Profile
-              </a>
+                Learning Path
+              </button>
               <button
                 onClick={handleLogout}
                 className="py-3 px-4 bg-white rounded-lg text-center font-semibold text-red-600 hover:bg-red-500 hover:text-white transition-all duration-300 border-2 border-red-200 hover:border-red-500"
