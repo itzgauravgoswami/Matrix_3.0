@@ -6,6 +6,8 @@ import authRoutes from './routes/authRoutes.js'
 import notesRoutes from './routes/notesRoutes.js'
 import quizRoutes from './routes/quizRoutes.js'
 import qaRoutes from './routes/qaRoutes.js'
+import supremeLearningRoutes from './routes/supremeLearningRoutes.js'
+import aiTutorRoutes from './routes/aiTutorRoutes.js'
 
 dotenv.config()
 
@@ -29,6 +31,8 @@ app.use('/api/auth', authRoutes)
 app.use('/api/notes', notesRoutes)
 app.use('/api/quiz', quizRoutes)
 app.use('/api/qa', qaRoutes)
+app.use('/api/supreme-learning', supremeLearningRoutes)
+app.use('/api/ai-tutor', aiTutorRoutes)
 
 // Health check
 app.get('/api/health', (req, res) => {

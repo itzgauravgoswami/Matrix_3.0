@@ -42,4 +42,17 @@ export const qaAPI = {
   evaluateQA: (data) => api.post('/qa/evaluate', data)
 }
 
+// Supreme Learning API calls
+export const supremeLearningAPI = {
+  generate: (data) => api.post('/supreme-learning/generate', data)
+}
+
+// AI Tutor API calls
+export const aiTutorAPI = {
+  startSession: (data) => api.post('/ai-tutor/start-session', data),
+  sendMessage: (data) => api.post('/ai-tutor/send-message', data),
+  getHistory: (sessionId) => api.get(`/ai-tutor/history/${sessionId}`),
+  endSession: (data) => api.post('/ai-tutor/end-session', data)
+}
+
 export default api
